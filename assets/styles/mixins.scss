@@ -1,0 +1,12 @@
+@mixin content-block($bg-color, $height: 500px) {
+  width: 100%;
+  height: $height;
+  background-color: $bg-color;
+  border-radius: 20px;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}

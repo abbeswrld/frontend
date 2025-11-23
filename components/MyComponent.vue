@@ -1,3 +1,68 @@
+
+<script setup>
+useHead({
+  title: 'Главная страница',
+  meta: [
+    { charset: 'utf-8' },
+    { name: 'viewport', content: 'width=device-width, initial-scale=1.0' }
+  ],
+  link: [
+    { rel: 'icon', href: '/images/logo/icon.png' },
+    { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
+    { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
+    {
+      rel: 'stylesheet',
+      href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap'
+    }
+  ]
+})
+
+import { ref } from 'vue'
+import Banner from './Banner.vue'
+import Card from './Card.vue'
+const greeting = ref('Hello, World!')
+function toggleGreeting() {
+  greeting.value = greeting.value === 'Hello, World!' ? 'Hello, FEFU!' : 'Hello, World!'
+}
+</script>
+
+<template>
+   <div class="home-page">
+      <header>
+         <section class="header">
+            <h1>Текст хеддера</h1>
+         </section>
+      </header>
+
+      <main>
+         <div class="list content-">
+            <h1>Заголовок</h1>
+            <ul>
+               <li>текст 1</li>
+               <li>текст 2</li>
+               <li>текст 3</li>
+            </ul>
+         </div>
+
+         <div class="main content">
+            <h1>Заголовок мейн блока</h1>
+            <p>{{ greeting }}</p>
+            <button @click="toggleGreeting">Сменить приветствие</button>
+         </div>
+
+         
+         <Card/>
+
+      </main>
+
+      <footer>
+        <Banner/>
+      </footer>
+   </div>
+
+</template>
+
+<style scoped>
 :root {
   --font-sans: 'Open Sans', sans-serif;
   --font-heading: 'Montserrat', sans-serif;
@@ -134,74 +199,10 @@ footer{
     background-color: #5a9bd5;
 }
 
-.third{
-    width: 100%;
-    height: 500px;
-    background-color: #2E8B57;
-    margin-right: auto;
-    border-radius: 20px;
-}
-
-.third h1{
-    padding: 20px;
-    margin: 20px;
-}
-
-.ribombee{
-    width: 90px; 
-    margin: 20px;
-}
-
-
-
-.about {
-    width: 100%;
-    height: 200px;
-    text-align: center;
-    display: flex;           
-    align-items: center;
-    background-color: #4682B4;
-    border-radius: 30px;
-}
-
-.info-tg{
-    width: 256px;
-    height: 124px;
-    border-radius: 30px; 
-    cursor: pointer;
-    padding: auto;
-    margin-left: 20px;
-    position: relative;
-    background-color: #26a4e3;
-    border: none;
-}
-
-.info-tg span { 
-    position: absolute;
-    bottom: 10px;
-    left: 10px;
-    font-family: "mine";
-    color: white;
-    font-size: 40px;
-    font-family: mine;
-}
-
-.info-tg:hover{
-    opacity: 0.9;
-    filter: brightness(1.1);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-}
 
 
 
 
 
 
-
-
-@font-face {
-    font-family: "mine";
-    src: url("src/fonts/minecraft.ttf") format("truetype");
-    font-style: normal;
-    font-weight: normal;
-} 
+</style>
